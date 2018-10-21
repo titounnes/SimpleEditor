@@ -2,8 +2,10 @@
   <head>
     <title>Simple Editor</title>
   </head>
-  <body>
+  <body onload="$('#editor').focus()">
+    <p> Ctrl+T: membersihkan karakter sampah, Ctrl+B: Bold, Ctrl+U: underline, Ctrl+I: Italic, Alt+C: center, Alt+L: left, Alt+R: right, Alt+j: Justify</p>
     <div id="editor" contentEditable="true" style="height:400px;width:600px"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="SimpleEditor.js?v=2"></script>
   </body>
  </html>
