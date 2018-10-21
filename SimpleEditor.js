@@ -55,33 +55,39 @@ $(document).on('click','#editor', function(e){
 /*
 penggunaan shortcut
 */
-$(document).on('keyup', function(e){
-  console.log(e.which)
-    var alg = {
-    67 : 'center',
-    74 : 'justify',
-    76 : 'left',
-    82 : 'right',
-  }
-  var bullet = {
-    85 : 'ul',
-    79 : 'ol'
-  }
-  switch(e.which){
-    case  67 :
-    case  74 :
-    case  76 :
-    case  82 :
-      if(e.altKey){
-        return SimpleEditor.alignment(alg[e.which]);
-      }
-      break;
-    case 79 :
-    case 85 :
-      if(e.altKey){
-        return SimpleEditor.bullet(bullet[e.which]) 
-      }
-      break;
-    case 
-  }
+$(document).ready(function(){
+    $(document).on('keyup', function(e){
+        console.log(e.which)
+            var alg = {
+            67 : 'center',
+            74 : 'justify',
+            76 : 'left',
+            82 : 'right',
+        }
+        var bullet = {
+            85 : 'ul',
+            79 : 'ol'
+        }
+        switch(e.which){
+            case  67 :
+            case  74 :
+            case  76 :
+            case  82 :
+                if(e.altKey){
+                    return SimpleEditor.alignment(alg[e.which]);
+                }
+                break;
+            case 79 :
+            case 85 :
+                if(e.altKey){
+                    return SimpleEditor.bullet(bullet[e.which]) 
+                }
+                break;
+            case 84 :
+                if(e.altKey){
+                    return $('#editor').html(SimpleEditor.filterJunk($('#editor').html()));
+                }
+                break; 
+        }
+    })
 })
